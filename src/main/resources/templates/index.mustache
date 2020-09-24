@@ -1,3 +1,32 @@
+{{>layout/header}}
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-8">
+            <label> 게시판 기본 테스트</label>
+            <table class="table table-horizontal table-bordered">
+                <thead class="thead-strong">
+                <tr>
+                    <th>글 번호</th>
+                    <th>내 용</th>
+                </tr>
+                </thead>
 
 
-<h2>코인노래방 웹페이지 초기 세팅</h2>
+                <tbody id="tbody">
+                {{#board}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{footprint}}</td>
+                    </tr>
+                {{/board}}
+                </tbody>
+            </table>
+
+            <a href="/write" role="button" class="btn btn-primary form-control">발자국 남기기</a>
+        </div>
+    </div>
+</div>
+
+
+{{>layout/footer}}

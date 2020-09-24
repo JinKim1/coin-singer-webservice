@@ -22,7 +22,7 @@ apply plugin: 'io.spring.dependency-management'
 //    id 'io.spring.dependency-management'
 //}
 
-group 'com.djjy.marine'
+group 'com.9.capstone'
 version '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
