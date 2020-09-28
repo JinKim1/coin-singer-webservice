@@ -13,7 +13,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model){
-        model.addAttribute("board",boardService.findAll());
+        model.addAttribute("board",boardService.findAllDesc());
         return "index";
     }
 

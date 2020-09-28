@@ -6,22 +6,39 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+
+//Board 는 Entitiy 어노테이션을 붙였다.
+//Board 는 database table이다. id(primary key), title, content, author, footprint로 이루어져있다.
+//create table (id long primary key auto_increment,title varchar(255), content varchar(255), author varchar(50), footprint varchar(255)); 랑 비슷
 @Getter
 @NoArgsConstructor
 @Entity
-//Board 는 Entitiy 어노테이션을 붙였다.
-//Board 는 database table이다. id(primary key) 와 footprint로 이루어져있다.
-//create table (id long primary key auto increment,footprint varchar(255)); 랑 비슷
-public class Board {
+public class Board extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
+    private String title;
+
     private String footprint;
 
+    @Column(nullable = false)
+    private String content;
+
+    private String author;
+
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
     @Builder
-    public Board(String footprint){
-        this.footprint=footprint;
+    public Board(String title, String content, String author, String footprint) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+        this.footprint = footprint;
     }
 }

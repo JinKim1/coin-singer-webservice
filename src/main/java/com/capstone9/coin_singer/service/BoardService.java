@@ -18,13 +18,15 @@ public class BoardService {
 
     @Transactional
     public Long save(BoardSaveRequestDto requestDto){
-        boardRepository.save(requestDto.toEntity());
-        return Long.valueOf(1);
+//        boardRepository.save(requestDto.toEntity());
+        return boardRepository.save(requestDto.toEntity()).getId();
     }
 
 
     @Transactional(readOnly = true)
-    public List<BoardListResponseDto> findAll(){
-        return boardRepository.findAll().stream().map(board->new BoardListResponseDto(board)).collect(Collectors.toList());
+    public List<BoardListResponseDto> findAllDesc(){
+        return boardRepository.findAll().stream()
+                .map(board->new BoardListResponseDto(board))
+                .collect(Collectors.toList());
     }
 }
