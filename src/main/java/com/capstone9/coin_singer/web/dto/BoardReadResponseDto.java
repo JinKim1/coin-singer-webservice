@@ -3,15 +3,15 @@ package com.capstone9.coin_singer.web.dto;
 import com.capstone9.coin_singer.domain.Board;
 import lombok.Getter;
 
-import java.time.LocalDateTime;
-
 @Getter
-public class BoardListResponseDto {
+public class BoardReadResponseDto {
     private Long id;
     private String title;
+    private String content;
 
-    public BoardListResponseDto(Board entity){
+    public BoardReadResponseDto(Board entity){
         this.id = entity.getId();
         this.title = entity.getTitle();
+        this.content = entity.getContent();
     }
 }

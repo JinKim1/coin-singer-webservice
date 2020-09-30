@@ -1,0 +1,30 @@
+{{>layout/header}}
+{{>layout/menubar}}
+게시글읽기
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="id"> 글번호</label>
+                <input type="text" class="form-control" id="id" value="{{board.id}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="title"> 제목</label>
+                <input type="text" class="form-control" id="title" value="{{board.title}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="content"> 내용</label>
+                <input type="text" class="form-control" id="content" value="{{board.content}}" readonly>
+            </div>
+
+            <a href="/boardUpdate/{{board.id}}" role="button" class="btn btn-primary"> 수정 </a>
+            <button type="button" class="btn btn-danger" id="btn-delete"> 삭제 </button>
+            <a href="/board" role="button" class="btn btn-secondary"> 목록으로 </a>
+
+        </div>
+    </div>
+</div>
+
+
+
+{{>layout/footer}}

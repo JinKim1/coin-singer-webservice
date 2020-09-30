@@ -1,0 +1,28 @@
+{{>layout/header}}
+{{>layout/menubar}}
+게시글작성
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-6">
+            <form>
+                <div class="form-group">
+                    <label for="title">제목</label>
+                    <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label for="content"> 내용 </label>
+                    <textarea class="form-control" id="content" placeholder="내용을 입력하세요"></textarea>
+                </div>
+            </form>
+
+            <button type="button" class="btn btn-primary form-control" id="btn-save"> 저장 </button>
+            <a href="/board" role="button" class="btn btn-secondary form-control">취소</a>
+        </div>
+    </div>
+</div>
+
+
+{{>layout/footer}}
+
+
+

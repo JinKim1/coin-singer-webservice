@@ -10,22 +10,17 @@ import lombok.NoArgsConstructor;
 public class BoardSaveRequestDto {
     private String title;
     private String content;
-    private String author;
-    private String footprint;
 
     @Builder
-    public BoardSaveRequestDto(String title, String content, String author, String footprint){
+    public BoardSaveRequestDto(String title, String content){
         this.title = title;
         this.content = content;
-        this.author = author;
-        this.footprint=footprint;
     }
 
-    public Board toEntity() {
+    public Board toEntity(){
         return Board.builder()
                 .title(title)
                 .content(content)
-                .author(author)
                 .build();
     }
 }

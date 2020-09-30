@@ -13,32 +13,24 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Board extends BaseTimeEntity {
+public class Board  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
     private String title;
-
-    private String footprint;
-
     @Column(nullable = false)
     private String content;
 
-    private String author;
-
-
-    public void update(String title, String content) {
+    @Builder
+    public Board(String title, String content) {
         this.title = title;
         this.content = content;
     }
 
-    @Builder
-    public Board(String title, String content, String author, String footprint) {
+    public void update(String title, String content){
         this.title = title;
         this.content = content;
-        this.author = author;
-        this.footprint = footprint;
     }
 }

@@ -1,0 +1,49 @@
+{{>layout/header}}
+{{>layout/menubar}}
+기본게시판
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-6">
+
+            <table class="table table-horizontal table-bordered">
+                <thead class="thead-strong">
+                <tr>
+                    <th>글 번호</th>
+                    <th>제 목</th>
+                </tr>
+                </thead>
+
+
+                <tbody id="tbody">
+                {{#board}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td><a href="/boardRead/{{id}}">{{title}}</a></td>
+                    </tr>
+                {{/board}}
+                </tbody>
+            </table>
+
+            <ul class="pagination">
+                {{#goPreviousPage}}
+                    <li class="page-item"><a class="page-link" href="/board?page={{.}}">Previous</a></li>
+                {{/goPreviousPage}}
+                {{#previousPageList}}
+                    <li class="page-item"><a class="page-link" href="/board?page={{a}}">{{b}}</a></li>
+                {{/previousPageList}}
+                <li class="page-item active"><a class="page-link" href="/board?page={{currentPageA}}">{{currentPage}}</a></li>
+                {{#nextPageList}}
+                    <li class="page-item"><a class="page-link" href="/board?page={{a}}">{{b}}</a></li>
+                {{/nextPageList}}
+                {{#goNextPage}}
+                    <li class="page-item"><a class="page-link" href="/board?page={{.}}">Next</a></li>
+                {{/goNextPage}}
+            </ul>
+
+            <a href="/boardWrite" role="button" class="btn btn-primary form-control">글쓰기</a>
+        </div>
+    </div>
+</div>
+
+
+{{>layout/footer}}
