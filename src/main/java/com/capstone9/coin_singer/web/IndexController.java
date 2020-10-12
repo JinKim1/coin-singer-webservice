@@ -1,7 +1,9 @@
 package com.capstone9.coin_singer.web;
 
 import com.capstone9.coin_singer.service.BoardService;
+import com.capstone9.coin_singer.service.CommentService;
 import com.capstone9.coin_singer.web.dto.BoardReadResponseDto;
+import com.capstone9.coin_singer.web.dto.CommentListResponseDto;
 import com.capstone9.coin_singer.web.dto.PageMaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -13,10 +15,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
     private final BoardService boardService;
+    private final CommentService commentService;
 
     @GetMapping("/")
     public String index(Model model){
@@ -38,7 +43,6 @@ public class IndexController {
         else{
             pageMaker = new PageMaker(0);
         }
-
 
         if((pageMaker.getCurrentPage()-1)/5 == 0){
             model.addAttribute("goPreviousPage", 0);
@@ -65,7 +69,11 @@ public class IndexController {
     @GetMapping("/boardRead/{id}")
     public String boardRead(@PathVariable Long id, Model model){
         BoardReadResponseDto dto = boardService.findById(id);
+        List<CommentListResponseDto> commentList = commentService.findAll(id);
+
+//        CommentListResponseDto commentListResponseDto =
         model.addAttribute("board",dto);
+        model.addAttribute("comment",commentList);
 
         return "boardRead";
     }

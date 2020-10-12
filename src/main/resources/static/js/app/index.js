@@ -4,6 +4,7 @@ var index = {
         $('#btn-save').on('click',function(){_this.save();});
         $('#btn-update').on('click',function(){_this.update();});
         $('#btn-delete').on('click',function(){_this.delete();});
+        $('#btn-save-comment').on('click',function(){_this.saveComment();});
     },
 
     save : function(){
@@ -24,6 +25,26 @@ var index = {
         });
     },
 
+    saveComment : function(){
+        var data = {
+            board_id : $('#id').val(),
+            writer: $('#writer').val(),
+            content: $('#comment').val()
+        };
+
+        var id = $('#id').val();
+        $.ajax({
+            type: 'POST',
+            url: '/api/v1/comment',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function(){alert('등록되었습니다.');
+        window.location.href='/boardRead/'+id;
+        }).fail(function(error){alert(JSON.stringify(error));
+        });
+    },
+
     delete : function (){
         var id = $('#id').val();
 
@@ -37,7 +58,7 @@ var index = {
                   alert('글이 삭제되었습니다.');
                   window.location.href='/board';
             } else {
-                  window.location.href='/boardRead/id';
+                  window.location.href='/boardRead/'+id;
             }
         }).fail(function(error){
             alert(JSON.stringify(error));
@@ -63,7 +84,7 @@ var index = {
                   alert('글이 수정되었습니다.');
                   window.location.href='/board';
             } else {
-                  window.location.href='/boardRead/id';
+                  window.location.href='/boardRead/'+id;
             }
         }).fail(function(error){
             alert(JSON.stringify(error));
