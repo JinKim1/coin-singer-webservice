@@ -1,7 +1,7 @@
 package com.capstone9.coin_singer.service;
 
-import com.capstone9.coin_singer.domain.Board;
-import com.capstone9.coin_singer.domain.BoardRepository;
+import com.capstone9.coin_singer.domain.board.Board;
+import com.capstone9.coin_singer.domain.board.BoardRepository;
 import com.capstone9.coin_singer.web.dto.BoardListResponseDto;
 import com.capstone9.coin_singer.web.dto.BoardReadResponseDto;
 import com.capstone9.coin_singer.web.dto.BoardSaveRequestDto;

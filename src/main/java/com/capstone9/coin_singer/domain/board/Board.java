@@ -1,5 +1,6 @@
-package com.capstone9.coin_singer.domain;
+package com.capstone9.coin_singer.domain.board;
 
+import com.capstone9.coin_singer.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Board  {
+public class Board extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

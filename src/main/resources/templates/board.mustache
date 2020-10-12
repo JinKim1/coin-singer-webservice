@@ -10,6 +10,7 @@
                 <tr>
                     <th>글 번호</th>
                     <th>제 목</th>
+                    <th>최종수정일</th>
                 </tr>
                 </thead>
 
@@ -19,6 +20,7 @@
                     <tr>
                         <td>{{id}}</td>
                         <td><a href="/boardRead/{{id}}">{{title}}</a></td>
+                        <td>{{modifiedDate}}</td>
                     </tr>
                 {{/board}}
                 </tbody>

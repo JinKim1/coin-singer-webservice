@@ -2,9 +2,11 @@ package com.capstone9.coin_singer.web;
 
 import com.capstone9.coin_singer.service.BoardService;
 import com.capstone9.coin_singer.service.CommentService;
+import com.capstone9.coin_singer.service.SRBoardService;
 import com.capstone9.coin_singer.web.dto.BoardReadResponseDto;
 import com.capstone9.coin_singer.web.dto.CommentListResponseDto;
 import com.capstone9.coin_singer.web.dto.PageMaker;
+import com.capstone9.coin_singer.web.dto.SRBoardReadResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -22,6 +24,7 @@ import java.util.List;
 public class IndexController {
     private final BoardService boardService;
     private final CommentService commentService;
+    private final SRBoardService srboardService;
 
     @GetMapping("/")
     public String index(Model model){
@@ -62,7 +65,6 @@ public class IndexController {
 
     @GetMapping("/boardWrite")
     public String boardWrite(){
-
         return "boardWrite";
     }
 
@@ -84,5 +86,24 @@ public class IndexController {
         model.addAttribute("board",dto);
 
         return "boardUpdate";
+    }
+
+    @GetMapping("/srboard")
+    public String srboard(Model model){
+        model.addAttribute("srboard",srboardService.findAll());//게시글 정보 가지고 옴
+
+        return "srboard";
+    }
+
+    @GetMapping("/srboardWrite")
+    public String srboardWrite(){
+        return "srboardWrite";
+    }
+
+    @GetMapping("/srboardRead/{id}")
+    public String srboardRead(@PathVariable Long id, Model model){
+        SRBoardReadResponseDto dto = srboardService.findById(id);
+        model.addAttribute("srboard",dto);
+        return "srboardRead";
     }
 }

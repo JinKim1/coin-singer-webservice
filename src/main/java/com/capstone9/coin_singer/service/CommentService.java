@@ -1,11 +1,8 @@
 package com.capstone9.coin_singer.service;
 
-import com.capstone9.coin_singer.domain.Board;
-import com.capstone9.coin_singer.domain.BoardRepository;
 import com.capstone9.coin_singer.domain.CommentRepository;
 import com.capstone9.coin_singer.web.dto.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

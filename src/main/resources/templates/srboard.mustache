@@ -1,0 +1,35 @@
+{{>layout/header}}
+{{>layout/menubar}}
+노래방정보게시판
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-6">
+
+            <table class="table table-horizontal table-bordered">
+                <thead class="thead-strong">
+                <tr>
+                    <th>노래방 이름</th>
+                    <th>위 치</th>
+                    <th>가격</th>
+                </tr>
+                </thead>
+
+
+                <tbody id="tbody">
+                {{#srboard}}
+                    <tr>
+                        <td><a href="/srboardRead/{{id}}">{{name}}</a></td>
+                        <td>{{location}}</td>
+                        <td>{{price}}</td>
+                    </tr>
+                {{/srboard}}
+                </tbody>
+            </table>
+
+            <a href="/srboardWrite" role="button" class="btn btn-primary form-control">글쓰기</a>
+        </div>
+    </div>
+</div>
+
+
+{{>layout/footer}}

@@ -1,6 +1,6 @@
 package com.capstone9.coin_singer.web.dto;
 
-import com.capstone9.coin_singer.domain.Board;
+import com.capstone9.coin_singer.domain.board.Board;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

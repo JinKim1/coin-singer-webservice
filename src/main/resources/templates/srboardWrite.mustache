@@ -1,0 +1,48 @@
+{{>layout/header}}
+{{>layout/menubar}}
+노래방정보작성
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-6">
+            <form>
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" class="form-control" id="name" placeholder="이름을 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label for="location"> 주소 </label>
+                    <textarea class="form-control" id="location" placeholder="주소를 입력하세요"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="img1">img1</label>
+                    <input type="text" class="form-control" id="img1" placeholder="사진1">
+                </div>
+                <div class="form-group">
+                    <label for="img2">img2</label>
+                    <input type="text" class="form-control" id="img2" placeholder="사진2">
+                </div>
+                <div class="form-group">
+                    <label for="price">price</label>
+                    <input type="text" class="form-control" id="price" placeholder="가격">
+                </div>
+                <div class="form-group">
+                    <label for="star">star</label>
+                    <input type="text" class="form-control" id="star" placeholder="별점">
+                </div>
+                <div class="form-group">
+                    <label for="facility">facility</label>
+                    <input type="text" class="form-control" id="facility" placeholder="시설">
+                </div>
+            </form>
+
+            <button type="button" class="btn btn-primary form-control" id="btn-save-sr"> 저장 </button>
+            <a href="/srboard" role="button" class="btn btn-secondary form-control">취소</a>
+        </div>
+    </div>
+</div>
+
+
+{{>layout/footer}}
+
+
+

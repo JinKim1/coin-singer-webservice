@@ -5,6 +5,7 @@ var index = {
         $('#btn-update').on('click',function(){_this.update();});
         $('#btn-delete').on('click',function(){_this.delete();});
         $('#btn-save-comment').on('click',function(){_this.saveComment();});
+        $('#btn-save-sr').on('click',function(){_this.savesr();});
     },
 
     save : function(){
@@ -44,6 +45,29 @@ var index = {
         }).fail(function(error){alert(JSON.stringify(error));
         });
     },
+
+    savesr : function(){
+            var data = {
+                name: $('#name').val(),
+                location: $('#location').val(),
+                img1: $('#img1').val(),
+                img2: $('#img2').val(),
+                price: $('#price').val(),
+                star: $('#star').val(),
+                facility: $('#facility').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/v1/srboard',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function(){alert('등록되었습니다.');
+            window.location.href='/srboard';
+            }).fail(function(error){alert(JSON.stringify(error));
+            });
+        },
 
     delete : function (){
         var id = $('#id').val();
