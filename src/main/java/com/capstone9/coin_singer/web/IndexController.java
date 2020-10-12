@@ -84,7 +84,6 @@ public class IndexController {
     public String boardUpdate(@PathVariable Long id, Model model){
         BoardReadResponseDto dto = boardService.findById(id);
         model.addAttribute("board",dto);
-
         return "boardUpdate";
     }
 
@@ -105,5 +104,12 @@ public class IndexController {
         SRBoardReadResponseDto dto = srboardService.findById(id);
         model.addAttribute("srboard",dto);
         return "srboardRead";
+    }
+
+    @GetMapping("/srboardUpdate/{id}")
+    public String srboardUpdate(@PathVariable Long id, Model model){
+        SRBoardReadResponseDto dto = srboardService.findById(id);
+        model.addAttribute("srboard",dto);
+        return "srboardUpdate";
     }
 }

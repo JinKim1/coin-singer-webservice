@@ -33,5 +33,4 @@ public class BoardController {
         return id;
     }
 
-
 }

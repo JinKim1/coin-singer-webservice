@@ -3,11 +3,10 @@ package com.capstone9.coin_singer.web;
 import com.capstone9.coin_singer.service.BoardService;
 import com.capstone9.coin_singer.service.CommentService;
 import com.capstone9.coin_singer.web.dto.BoardSaveRequestDto;
+import com.capstone9.coin_singer.web.dto.BoardUpdateRequestDto;
 import com.capstone9.coin_singer.web.dto.CommentSaveRequestDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -19,4 +18,5 @@ public class CommentController {
         commentService.save(requestDto);
         return Long.valueOf(1);
     }
+
 }

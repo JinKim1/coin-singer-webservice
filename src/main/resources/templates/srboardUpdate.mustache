@@ -10,11 +10,11 @@
             </div>
             <div class="form-group">
                 <label for="name">이름</label>
-                <input type="text" class="form-control" id="name" value="{{srboard.name}}" readonly>
+                <input type="text" class="form-control" id="name" value="{{srboard.name}}">
             </div>
             <div class="form-group">
                 <label for="location"> 주소 </label>
-                <input type="text" class="form-control" id="location" value="{{srboard.location}}" readonly>
+                <input type="text" class="form-control" id="location" value="{{srboard.location}}">
             </div>
             <div class="form-inline form-group">
                 <img src="/img/{{srboard.img1}}.png" alt="My Image1" width="300" height="300">
@@ -22,20 +22,19 @@
             </div>
             <div class="form-group">
                 <label for="price">price</label>
-                <input type="text" class="form-control" id="price" value="{{srboard.price}}" readonly>
+                <input type="text" class="form-control" id="price" value="{{srboard.price}}">
             </div>
             <div class="form-group">
                 <label for="star">star</label>
-                <input type="text" class="form-control" id="star" value="{{srboard.star}}" readonly>
+                <input type="text" class="form-control" id="star" value="{{srboard.star}}">
             </div>
             <div class="form-group">
                 <label for="facility">facility</label>
-                <input type="text" class="form-control" id="facility" value="{{srboard.facility}}" readonly>
+                <input type="text" class="form-control" id="facility" value="{{srboard.facility}}">
             </div>
 
-            <a href="/srboardUpdate/{{srboard.id}}" role="button" class="btn btn-primary"> 수정 </a>
-            <button type="button" class="btn btn-danger" id="btn-delete-sr"> 삭제 </button>
-            <a href="/srboard" role="button" class="btn btn-secondary"> 목록으로 </a>
+            <button type="button" class="btn btn-primary" id="btn-update-sr"> 저장 </button>
+            <a href="/srboardRead/{{srboard.id}}" role="button" class="btn btn-secondary"> 취소 </a>
         </div>
     </div>
 </div>

@@ -22,18 +22,19 @@ public class SRBoardService {
         return Long.valueOf(1);
     }
 
-//    @Transactional
-//    public Long update(Long id, BoardUpdateRequestDto requestDto){
-//        Board board = singingRoomboardRepository.findById(id).orElseThrow(()->new IllegalArgumentException("nonononono해당 게시글이 없습니다. id = "+id));
-//        board.update(requestDto.getTitle(), requestDto.getContent());
-//        return id;
-//    }
-//
-//    @Transactional
-//    public void delete(Long id){
-//        Board board = singingRoomboardRepository.findById(id).orElseThrow(()->new IllegalArgumentException("nonononono해당 게시글이 없습니다. id = "+id));
-//        singingRoomboardRepository.delete(board);
-//    }
+    @Transactional
+    public Long update(Long id, SRBoardUpdateRequestDto requestDto){
+        System.out.println("업데이트?");
+        SRBoard srboard = srboardRepository.findById(id).orElseThrow(()->new IllegalArgumentException("nonononono해당 게시글이 없습니다. id = "+id));
+        srboard.update(requestDto.getName(), requestDto.getLocation(), requestDto.getImg1(),requestDto.getImg2(),requestDto.getPrice(),requestDto.getStar(),requestDto.getFacility());
+        return id;
+    }
+
+    @Transactional
+    public void delete(Long id){
+        SRBoard srboard = srboardRepository.findById(id).orElseThrow(()->new IllegalArgumentException("nonononono해당 게시글이 없습니다. id = "+id));
+        srboardRepository.delete(srboard);
+    }
 
     @Transactional(readOnly = true)
     public List<SRBoardListResponseDto> findAll(){

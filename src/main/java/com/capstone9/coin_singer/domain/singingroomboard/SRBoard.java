@@ -41,8 +41,13 @@ public class SRBoard extends BaseTimeEntity {
         this.facility = facility;
     }
 
-//    public void update(String title, String content){
-//        this.title = title;
-//        this.content = content;
-//    }
+    public void update(String name, String location, String img1, String img2, long price, long star, long facility){
+        this.name = name;
+        this.location = location;
+        this.img1 = img1;
+        this.img2 = img2;
+        this.price = price;
+        this.star = star;
+        this.facility = facility;
+    }
 }
