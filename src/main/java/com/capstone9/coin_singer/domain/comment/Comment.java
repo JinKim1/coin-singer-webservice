@@ -1,4 +1,4 @@
-package com.capstone9.coin_singer.domain;
+package com.capstone9.coin_singer.domain.comment;
 
 import lombok.Builder;
 import lombok.Getter;

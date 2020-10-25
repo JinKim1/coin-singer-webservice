@@ -1,9 +1,8 @@
-package com.capstone9.coin_singer.domain;
+package com.capstone9.coin_singer.domain.comment;
 
-import com.capstone9.coin_singer.web.dto.CommentListResponseDto;
+import com.capstone9.coin_singer.domain.comment.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 

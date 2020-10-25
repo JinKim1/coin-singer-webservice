@@ -1,5 +1,7 @@
 package com.capstone9.coin_singer.web;
 
+import com.capstone9.coin_singer.config.auth.LoginUser;
+import com.capstone9.coin_singer.config.auth.dto.SessionUser;
 import com.capstone9.coin_singer.service.BoardService;
 import com.capstone9.coin_singer.service.CommentService;
 import com.capstone9.coin_singer.service.SRBoardService;
@@ -27,14 +29,21 @@ public class IndexController {
     private final SRBoardService srboardService;
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model,@LoginUser SessionUser user){
+        if(user != null){
+            model.addAttribute("memberName",user.getName());
+        }
         return "index";
     }
 
     @GetMapping("/board")
     public String footprint(@RequestParam(required = false) String page,
                             @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC, size = 5) Pageable pageable ,
-                            Model model){
+                            Model model,@LoginUser SessionUser user){
+
+        if(user != null){
+            model.addAttribute("memberName",user.getName());//로그인한 사용자 정보 가지고 옴
+        }
 
         model.addAttribute("board",boardService.findAll(pageable));//게시글 정보 가지고 옴
 
@@ -64,52 +73,57 @@ public class IndexController {
     }
 
     @GetMapping("/boardWrite")
-    public String boardWrite(){
+    public String boardWrite(Model model,@LoginUser SessionUser user){
+        model.addAttribute("memberName",user.getName());//로그인한 사용자 정보 가지고 옴
         return "boardWrite";
     }
 
     @GetMapping("/boardRead/{id}")
-    public String boardRead(@PathVariable Long id, Model model){
+    public String boardRead(@PathVariable Long id, Model model,@LoginUser SessionUser user){
         BoardReadResponseDto dto = boardService.findById(id);
         List<CommentListResponseDto> commentList = commentService.findAll(id);
 
 //        CommentListResponseDto commentListResponseDto =
         model.addAttribute("board",dto);
         model.addAttribute("comment",commentList);
-
+        model.addAttribute("memberName",user.getName());//로그인한 사용자 정보 가지고 옴
         return "boardRead";
     }
 
     @GetMapping("/boardUpdate/{id}")
-    public String boardUpdate(@PathVariable Long id, Model model){
+    public String boardUpdate(@PathVariable Long id, Model model,@LoginUser SessionUser user){
         BoardReadResponseDto dto = boardService.findById(id);
         model.addAttribute("board",dto);
+        model.addAttribute("memberName",user.getName());//로그인한 사용자 정보 가지고 옴
         return "boardUpdate";
     }
 
     @GetMapping("/srboard")
-    public String srboard(Model model){
+    public String srboard(Model model,@LoginUser SessionUser user){
         model.addAttribute("srboard",srboardService.findAll());//게시글 정보 가지고 옴
-
+        model.addAttribute("memberName",user.getName());//로그인한 사용자 정보 가지고 옴
         return "srboard";
     }
 
     @GetMapping("/srboardWrite")
-    public String srboardWrite(){
+    public String srboardWrite(Model model,@LoginUser SessionUser user){
+        model.addAttribute("memberName",user.getName());//로그인한 사용자 정보 가지고 옴
         return "srboardWrite";
     }
 
     @GetMapping("/srboardRead/{id}")
-    public String srboardRead(@PathVariable Long id, Model model){
+    public String srboardRead(@PathVariable Long id, Model model,@LoginUser SessionUser user){
         SRBoardReadResponseDto dto = srboardService.findById(id);
         model.addAttribute("srboard",dto);
+        model.addAttribute("memberName",user.getName());//로그인한 사용자 정보 가지고 옴
         return "srboardRead";
     }
 
     @GetMapping("/srboardUpdate/{id}")
-    public String srboardUpdate(@PathVariable Long id, Model model){
+    public String srboardUpdate(@PathVariable Long id, Model model,@LoginUser SessionUser user){
         SRBoardReadResponseDto dto = srboardService.findById(id);
         model.addAttribute("srboard",dto);
+        model.addAttribute("memberName",user.getName());//로그인한 사용자 정보 가지고 옴
         return "srboardUpdate";
     }
 }

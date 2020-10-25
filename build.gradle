@@ -47,4 +47,6 @@ dependencies {
 //    implementation 'org.springframework.boot:spring-boot-starter-security'
 //    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 //    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+    compile('org.springframework.session:spring-session-jdbc')
 }

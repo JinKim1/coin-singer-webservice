@@ -1,6 +1,6 @@
 package com.capstone9.coin_singer.service;
 
-import com.capstone9.coin_singer.domain.CommentRepository;
+import com.capstone9.coin_singer.domain.comment.CommentRepository;
 import com.capstone9.coin_singer.web.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

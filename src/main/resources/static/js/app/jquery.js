@@ -4240,7 +4240,7 @@ jQuery.extend( {
 	_removeData: function( elem, name ) {
 		dataPriv.remove( elem, name );
 	}
-} );
+} );-
 
 jQuery.fn.extend( {
 	data: function( key, value ) {

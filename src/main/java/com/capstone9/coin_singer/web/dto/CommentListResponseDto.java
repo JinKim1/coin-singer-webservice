@@ -1,6 +1,6 @@
 package com.capstone9.coin_singer.web.dto;
 
-import com.capstone9.coin_singer.domain.Comment;
+import com.capstone9.coin_singer.domain.comment.Comment;
 import lombok.Getter;
 
 @Getter
