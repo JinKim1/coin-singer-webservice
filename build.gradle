@@ -46,4 +46,5 @@ dependencies {
     implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.4.1'
 //    implementation 'org.springframework.boot:spring-boot-starter-security'
 //    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+//    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }

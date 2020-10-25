@@ -18,7 +18,9 @@ public class BoardController {
     // 이때 save 함수의 parameter로 받는 BoardSaveRequestDto 객체는 index.js 에서 넘겨받는 data와 변수들이 일치해야 한다.
     @PostMapping("/api/v1/board")
     public Long save(@RequestBody BoardSaveRequestDto requestDto){
+//    public String save(BoardSaveRequestDto requestDto){
         boardService.save(requestDto);
+
         return Long.valueOf(1);
     }
 

@@ -1,85 +1,33 @@
 {{>layout/header}}
-{{>layout/menubar}}
 
-메인화면
-<div class="container">
-    <div class="container-fluid">
-        <div class="table-responsive">
-            <table class="table table-hover table-sm">
-                <tbody>
-                    <tr>
-                        <th>NO</th>
-                        <th>제목</th>
-                        <th>작성자</th>
-                        <th>최종수정일</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Westfield</td>
-                        <td>김</td>
-                        <td>19.05.18 </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Galway<span class="badge badge-pill badge-primary">new</span></td>
-                        <td>이</td>
-                        <td>9.29 </td>
-                    </tr>
-                    <tr class="table-primary">
-                        <td>3</td>
-                        <td>Bern<span class="badge badge-primary">new</span></td>
-                        <td>박</td>
-                        <td>9.29</td>
-                    </tr>
-                </tbody>
-            </table>
+<div class="swiper-container slider">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide bg1">
+            <span>혼자 부르긴 지루해...?</span>
+            <p>듀엣 파트너를 구해봐</p>
+            <div></div>
         </div>
-    </div>
-    <!-- Button toolbar -->
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- Dropdown Split Button -->
-            <div class="col">
-                <div class="row">
-                <div class="btn-group mb-3">
-                    <button type="button" class="btn btn-primary btn-block">검색</button>
-                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">제목</a>
-                        <a class="dropdown-item" href="#">작성자</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </div>
-                <div>
-                       <input class="form-control" type="text" required="">
-                  </div>
-                </div>
-            </div>
-
-            <!-- 글 등록-->
-            <div class="board-toolbar-create col" align="right">
-                <a href="/write" role="button" class="btn btn-primary board-party-write">
-                    글 등록
-                </a>
-            </div>
+        <div class="swiper-slide bg2">
+            <span>Wine</span>
+            <p>an alcoholic drink</p>
+            <div>Wines not made from grapes involve fermentation of additional crops including,<br> rice wine and other fruit wines such as plum, cherry, pomegranate, currant and elderberry.</div>
         </div>
-
+        <div class="swiper-slide bg3">
+            <span>Wine</span>
+            <p>an alcoholic drink</p>
+            <div>Wines not made from grapes involve fermentation of additional crops including,<br> rice wine and other fruit wines such as plum, cherry, pomegranate, currant and elderberry.</div>
+        </div>
+        <div class="swiper-slide bg4">
+            <span>Wine</span>
+            <p>an alcoholic drink</p>
+            <div>Wines not made from grapes involve fermentation of additional crops including,<br> rice wine and other fruit wines such as plum, cherry, pomegranate, currant and elderberry.</div>
+        </div>
     </div>
 </div>
+
+
+{{>layout/nav}}
+
 
 
 {{>layout/footer}}
