@@ -11,6 +11,7 @@
                 <thead class="thead-strong">
                 <tr>
                     <th>글 번호</th>
+                    <th>작성자</th>
                     <th>제 목</th>
                     <th>최종수정일</th>
                 </tr>
@@ -21,6 +22,7 @@
                 {{#board}}
                     <tr>
                         <td>{{id}}</td>
+                        <td>{{memberName}}</td>
                         <td><a href="/boardRead/{{id}}">{{title}}</a></td>
                         <td>{{modifiedDate}}</td>
                     </tr>

@@ -20,17 +20,21 @@ public class Board extends BaseTimeEntity {
     private Long id;
 
     @Column(nullable = false)
+    private String writer;
+    @Column(nullable = false)
     private String title;
     @Column(nullable = false)
     private String content;
 
     @Builder
-    public Board(String title, String content) {
+    public Board(String writer,String title, String content) {
+        this.writer = writer;
         this.title = title;
         this.content = content;
     }
 
-    public void update(String title, String content){
+    public void update(String writer,String title, String content){
+        this.writer = writer;
         this.title = title;
         this.content = content;
     }

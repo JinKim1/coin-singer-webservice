@@ -28,7 +28,7 @@ public class BoardService {
     @Transactional
     public Long update(Long id, BoardUpdateRequestDto requestDto){
         Board board = boardRepository.findById(id).orElseThrow(()->new IllegalArgumentException("nonononono해당 게시글이 없습니다. id = "+id));
-        board.update(requestDto.getTitle(), requestDto.getContent());
+        board.update(requestDto.getWriter(),requestDto.getTitle(), requestDto.getContent());
         return id;
     }
 

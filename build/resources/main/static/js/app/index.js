@@ -12,6 +12,7 @@ var index = {
 
     save : function(){
         var data = {
+            writer: $('#writer').val(),
             title: $('#title').val(),
             content: $('#content').val()
         };
@@ -113,6 +114,7 @@ var index = {
 
     update : function(){
         var data = {
+            writer: $('#writer').val(),
             title: $('#title').val(),
             content: $('#content').val()
         };

@@ -7,11 +7,13 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class BoardUpdateRequestDto {
+    private String writer;
     private String title;
     private String content;
 
     @Builder
-    public BoardUpdateRequestDto(String title, String content){
+    public BoardUpdateRequestDto(String writer,String title, String content){
+        this.writer = writer;
         this.title = title;
         this.content = content;
     }
