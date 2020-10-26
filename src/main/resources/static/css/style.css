@@ -2,10 +2,8 @@
 
 .slider {height: 80vh; z-index:2;}
 .slider .swiper-slide {font-family: 'Jua', sans-serif; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #4B0082; text-align: center;}
-.slider .bg1 {background: url(../img/duet.png) no-repeat center/ cover;}
-.slider .bg2 {background: url(../img/visual2.png) no-repeat center/ cover; color: #fff;}
-.slider .bg3 {background: url(../img/visual3.png) no-repeat center/ cover;}
-.slider .bg4 {background: url(../img/visual4.png) no-repeat center/ cover; color: #fff;}
+.slider .bg1 {background: url(../img/slider1.png) no-repeat center/ cover;}
+.slider .bg2 {background: url(../img/slider2.png) no-repeat center/ cover; color: #fff;}
 .slider .swiper-slide span {opacity: 0; margin-top: -100px; font-size: 50px;} /*opacity로 처음에 안보이고 animation으로 보이게*/
 .slider .swiper-slide p {opacity: 0; font-size: 80px;}
 .slider .swiper-slide div {opacity: 0; font-size: 14px;}
@@ -13,6 +11,36 @@
 .slider .swiper-slide.swiper-slide-active p {animation: text 1s .5s both; }
 .slider .swiper-slide.swiper-slide-active div {animation: text 1s .8s both; }
 
+.small-container {
+        position: relative;
+            padding: 30px 20px 30px 20px;
+            background: #BA55D3;
+            width: 18rem;
+            text-align: left;
+            border-radius: 40px;
+            top: -30px;
+            left: 150px;
+            z-index: 15;
+            box-shadow: 0px 0px 15px grey;
+        }
+.small-container span{
+    font-family: 'Jua', sans-serif;
+    font-size: 30px;
+    color: #FFF;
+    }
+
+.small-container a{text-decoration:none;}
+.small-container a:hover{text-decoration:none;}
+.small-container span:hover { color: #DDA0DD; transition: 0.3s ease;}
+.xi-long-arrow-right xi-2x {
+        position: relative;
+        top: 25px;
+        right: 206px;
+}
+.xi-2x {
+    font-size: 2em;
+    color: #fff;
+}
 
 @keyframes text {
     0% {opacity: 0; transform: translateY(30px);}

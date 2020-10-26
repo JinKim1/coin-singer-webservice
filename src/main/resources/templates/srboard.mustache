@@ -1,13 +1,21 @@
 {{>layout/header}}
 {{>layout/nav}}
 {{>layout/userLoginBar}}
-노래방정보게시판
-<div class="container h-100">
-    <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-md-8">
 
-            <table class="table table-horizontal table-bordered">
-                <thead class="thead-strong">
+<div class="jb-wrap">
+    <div class="jb-image"><img src="img/base.png" alt=""></div>
+    <div class="jb-text">
+        <p>#노래방 정보</p>
+    </div>
+</div>
+
+
+<div class="table-container">
+    <div>
+        <div>
+
+            <table >
+                <thead>
                 <tr>
                     <th>노래방 이름</th>
                     <th>위 치</th>
@@ -16,7 +24,7 @@
                 </thead>
 
 
-                <tbody id="tbody">
+                <tbody>
                 {{#srboard}}
                     <tr>
                         <td><a href="/srboardRead/{{id}}">{{name}}</a></td>
@@ -26,8 +34,7 @@
                 {{/srboard}}
                 </tbody>
             </table>
-
-            <a href="/srboardWrite" role="button" class="btn btn-primary form-control">글쓰기</a>
+            <div class="table-btn"><a href="/srboardWrite">글쓰기</a></div>
         </div>
     </div>
 </div>
